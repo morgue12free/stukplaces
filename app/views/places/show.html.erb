@@ -8,10 +8,6 @@
   <%= @place.address %>
 </p>
 <p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
-<p>
   <strong>Phone:</strong>
   <%= @place.phone %>
 </p>
@@ -20,18 +16,22 @@
   <%= @place.website %>
 </p>
 <p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
+  <strong>Description:</strong>
+  <%= @place.description %>
 </p>
-<p>
-  <strong>Location:</strong>
 <div id="map" style="width: 230px; height: 230px;"></div>
-</p>
 
 </div>
 
 <div class="col-md-9">
 <h3>Reviews By People</h3>
+
+<%if current_user %>
+<h5>New Review</h5>
+<%= render "reviews/form" %>
+<h5>All Reviews</h5>
+<%= render @reviews %>
+<% end %>
 </div>
 
 </div>
