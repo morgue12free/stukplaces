@@ -4,8 +4,17 @@ class PlacesController < ApplicationController
 
   # GET /places
   # GET /places.json
+
+  #def index
+   # @places = Place.search(params[:search])
+  #end
+
   def index
-    @places = Place.search(params[:search])
+     if params[:query].present?
+       @places = Place.search(params[:query], page: params[:page])
+     else
+       @places = Place.all.page params[:page]
+     end
   end
 
   # GET /places/1

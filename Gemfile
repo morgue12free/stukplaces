@@ -46,12 +46,12 @@ group :development, :test do
 
 end
 
-group :production do
+#group :production do
 	
-	gem 'pg'
-	gem 'rails_12factor'
+#	gem 'pg'
+#	gem 'rails_12factor'
 
-end
+#end
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
@@ -64,3 +64,7 @@ gem 'devise'
 gem 'gravatarify', '~> 3.0.0'
 
 gem 'geocoder'
+
+gem "searchkick"
+
+gem 'will_paginate', '~> 3.0.6'

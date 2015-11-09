@@ -1,4 +1,5 @@
 class Place < ActiveRecord::Base
+	searchkick
 	validates_presence_of :name
 	validates_presence_of :phone
 	validates_presence_of :address
@@ -17,11 +18,12 @@ class Place < ActiveRecord::Base
     	0
 	end
 
-	def self.search(search)
-		if search
-			where(['name LIKE ? OR address LIKE ?', "#{search}", "#{search}"])
-		else 
-			all
-		end
-	end
+    
+	#def self.search(search)
+	#	if search
+	#		where(['name LIKE ? OR address LIKE ?', "#{search}", "#{search}"])
+	#	else 
+	#		all
+	#	end
+	#end
 end
