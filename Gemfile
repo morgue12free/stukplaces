@@ -44,6 +44,9 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
+  gem 'pg'
+  gem 'rails_12factor'
+
 end
 
 #group :production do
@@ -67,4 +70,7 @@ gem 'geocoder'
 
 gem "searchkick"
 
+<<<<<<< HEAD
 gem 'will_paginate', '~> 3.0.6'
+=======
+>>>>>>> 624f165011cba86ed39f2389973d43bf1735f5c9
