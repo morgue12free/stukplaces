@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+ 
+resources :reviews
 
-  resources :places
-  resources :reviews
+  resources :places, only: :index do
+   collection do 
+    post :import 
+    get :autocomplete
+   end
+  end
 
   devise_for :users, controllers: {registrations: "registrations"}
   # The priority is based upon order of creation: first created -> highest priority.

@@ -22,12 +22,13 @@
       <%= form_tag places_path, method: "get", class: "navbar-form navbar-left" do %>
 
         <div class="form-group">
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Type a place"%>
+        <%= text_field_tag :query, params[:query], class: "form-control", id: "place_search", autocomplete: "on"%>
       </div>
-      <%= submit_tag "Search", name: nil, class: "btn btn-default"%>
           <% if params[:query].present? %>
-           <%= link_to "clear", places_path %>
-      <% end %>
+               <%= link_to "clear", places_path %>
+             <% end %> 
+                <%= submit_tag "Search", name: nil, class: "btn btn-default"%>
+
       <% end %>
       
       <ul class="nav navbar-nav navbar-right">

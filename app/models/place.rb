@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
-	searchkick
+	searchkick autocomplete: ['title']
+
 	validates_presence_of :name
 	validates_presence_of :phone
 	validates_presence_of :address

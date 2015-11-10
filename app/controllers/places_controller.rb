@@ -17,6 +17,10 @@ class PlacesController < ApplicationController
      end
   end
 
+  def autocomplete
+    render json: Place.search(params[:query], autocomplete: true, limit: 10).map(&:title)
+  end
+
   # GET /places/1
   # GET /places/1.json
   def show
